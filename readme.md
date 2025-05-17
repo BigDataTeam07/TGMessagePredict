@@ -13,7 +13,13 @@
 2. Set up your Google Cloud credentials. Download the JSON key file for your service account and set the `KEY_PATH`
    variable to point to it.
     - Sample: `KEY_PATH = "abiding-root-413802-************.json"`
-3. Set CLUSTER_ARN, SECRET_NAME, WATCH_CHAT_IDS, PREDICT_URL in `handler.py`
+3. Set CLUSTER_ARN, SECRET_NAME, WATCH_CHAT_IDS, PREDICT_URL in `handler.py` or set it later in the environment
+   variables.
+    - `CLUSTER_ARN`: The Amazon Resource Name (ARN) of your Amazon MSK cluster.
+    - `SECRET_NAME`: The name of the secret in AWS Secrets Manager that contains the credentials for your Kafka cluster.
+    - `WATCH_CHAT_IDS`: A list of chat IDs to watch for messages. If a message is sent in one of these chats, it will be
+      processed.
+    - `PREDICT_URL`: The URL to which the prediction results will be sent.
 4. Start a t4g.nano instance:(if you don't want this service on cloud, skip this step)
     1. Generate a key pair in AWS EC2.
        ```
